@@ -22,7 +22,7 @@ class EstudianteModelo
 
     public static function guardarEstudiante(Estudiante $estudiante){
         $conexion=EstudianteModelo::conexionAlaBD();
-
+        echo "funciona guardar";
         $sql="INSERT INTO estudiante(nia, nombre, correo) values (:nia, :nombre, :correo)";
 
         $sentencia=$conexion->prepare($sql);

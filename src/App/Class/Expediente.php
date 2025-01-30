@@ -4,9 +4,10 @@ namespace App\Class;
 
 use App\Modelo\ExpedienteModelo;
 use DateTime;
-use \JsonSerializable;
+use JsonSerializable;
 
-class Expediente implements JsonSerializable{
+class Expediente {
+
 
     //Los signos de interrogación se colocan para poder establecer el contenido de las variables a null en el constructor
     private ?string $referencia;
@@ -52,24 +53,20 @@ class Expediente implements JsonSerializable{
         return $this;
     }
 
-    public function jsonSerialize()
-    {
-        // Devolvemos en un return como un array asociativo las variables predefinidas anteriormente.
-        return [
-          'referencia' => $this->referencia,
-          'contenido' => $this->contenido,
-            //Tenemos que establecer el formato que queremos para la fecha, primero va el dia luego el mes y luego el año con la letra en mayúscula d/m/Y.
-          'fechaModificacion' => $this->fechaModificacion->format("d/m/Y")
-        ];
-        // TODO: Implement jsonSerialize() method.
-    }
+
+
 
     public function load($id){
-        var_dump($id);
-        ExpedienteModelo::consultarExpediente($id);
+        $expediente = ExpedienteModelo::consultarExpediente($id);
+
+        return $expediente;
     }
+
+
+
 
     public function delete($id){
         ExpedienteModelo::deleteExpediente($id);
     }
+
 }

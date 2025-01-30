@@ -7,8 +7,6 @@ use App\Router\Router;
 use App\Class\Estudiante;
 use App\Controller\ExpedienteController;
 
-
-
 $router = new Router();
 
 
@@ -18,7 +16,7 @@ $router->addRoute('get','/',function(){
 });
 
 //Estudiante
-$router ->addRoute('post','/estudiantes',function(){
+$router ->addRoute('post','/estudiante',function(){
     $estudiante = new Estudiante();
     $estudiante->setNia($_POST['nia']);
     $estudiante->setNombre($_POST['nombre']);

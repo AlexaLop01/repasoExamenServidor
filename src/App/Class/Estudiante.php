@@ -7,10 +7,10 @@ use Ramsey\Uuid\Type\Integer;
 use \JsonSerializable;
 
 //Usamos la implementación del jsonSerializable.
-class Estudiante implements JsonSerializable{
+class Estudiante{
 
     //Variables
-    private integer $nia;
+    private int $nia;
     private string $nombre;
     private string $correo;
 
@@ -21,12 +21,13 @@ class Estudiante implements JsonSerializable{
      * @param string $nombre
      * @param string $correo
      */
-    public function __construct(int $nia, string $nombre, string $correo)
+    public function __construct(int $nia = 0, string $nombre = "", string $correo = "")
     {
         $this->nia = $nia;
         $this->nombre = $nombre;
         $this->correo = $correo;
     }
+
 
     //getter y setters
     public function getNia(): int
@@ -78,15 +79,12 @@ class Estudiante implements JsonSerializable{
         EstudianteModelo::guardarEstudiante($this);
     }
 
-
-    public function jsonSerialize()
-    {
-        //Devolvemos con un return en forma de array asociativo las variables predefinidas anteriormente.
-        return [
-          'NIA' => $this->nia,
-          'nombre' => $this->nombre,
-          'correo' => $this->correo,
-          'expediente' => $this->expediente
-        ];
+    public function convertirAJson(array $expediente){
+       $array =[
+           "nia" => $expediente["nia"],
+           "nombre" => $expediente["nombre"],
+           "correo" => $expediente["correo"],
+       ];
+       return json_encode($array);
     }
 }

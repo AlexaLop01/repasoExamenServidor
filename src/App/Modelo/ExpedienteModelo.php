@@ -21,26 +21,38 @@ class ExpedienteModelo
         return null;
     }
 
-    public static function consultarExpediente(string $referencia):Expediente{
+    public static function consultarExpediente(string $referencia): ?Expediente {
         $conexion = ExpedienteModelo::conexionAlaBD();
-        /*Hacemos el select a la base de datos , con los parametros, cabe recalcar que
-        la fecha le ponemos el formato que deseamos que nos devuelva , ya que se guarda en formato ingles,
-        ya después colocamos de donde y con que referencia , que es la que nos pasa por parámetro en la función.*/
-    echo 'Estoy dentro'.$referencia;
-        $sql = "SELECT referencia, contenido, date_format(fecha, 'd/m/Y') as fechaModificacion from expediente WHERE referencia = ?";
 
+        if (!$conexion) {
+            echo "Error en la conexión a la base de datos\n";
+            return null;
+        }
+
+        $sql = "SELECT referencia, contenido, date_format(fecha_modificacion, '%d/%m/%Y') as fechaModificacion FROM expediente WHERE referencia = ?";
         $sentencia = $conexion->prepare($sql);
-        $sentencia->bindValue(1,$referencia);
+        $sentencia->bindValue(1, $referencia);
 
-        $resultado = $sentencia->execute();
+        if (!$sentencia->execute()) {
+            echo "Error al ejecutar la consulta SQL\n";
+            return null;
+        }
+
+        $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+        if (!$resultado) {
+            echo "No se encontraron resultados en la BD\n";
+            return null;
+        }
 
         $expediente = new Expediente();
         $expediente->setReferencia($resultado['referencia']);
         $expediente->setContenido($resultado['contenido']);
-        $expediente->setFechaModificacion(DateTime::createFromFormat($resultado['fechaModificacion'], 'd/m/Y'));
+        $expediente->setFechaModificacion(DateTime::createFromFormat('d/m/Y', $resultado['fechaModificacion']));
 
         return $expediente;
     }
+
 
     public static function deleteExpediente(string $referencia){
         $conexion = ExpedienteModelo::conexionAlaBD();
