@@ -9,7 +9,15 @@ include_once DIRECTORIO_VISTAS."template/navegacion.php";
             <div class="row">
                 <div class="col-md-12">
                     <div class="info-box flex-column">
-                        <p>Información que se desee mostrar</p>
+                        <form action="/estudiante" method="post" class="info-box flex-column">
+                            <label for="controlnia">NIA</label>
+                            <input name="nia" id="controlnia" type="text">
+                            <label for="controlnombre">Nombre</label>
+                            <input name="nombre" id="controlnombre" type="text">
+                            <label for="controlcorreo">Email</label>
+                            <input name="correo" id="controlcorreo" type="email">
+                            <input type="submit">
+                        </form>
                     </div>
                 </div>
             </div>

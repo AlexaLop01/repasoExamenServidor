@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ardagnsrn/ollama-php",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ArdaGnsrn/ollama-php.git",
-                "reference": "6aca7d826298092f7bd3edce204dc02380232400"
+                "reference": "32a926e3fa14869ceb2018c0360e9a3fcfd4d526"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ArdaGnsrn/ollama-php/zipball/6aca7d826298092f7bd3edce204dc02380232400",
-                "reference": "6aca7d826298092f7bd3edce204dc02380232400",
+                "url": "https://api.github.com/repos/ArdaGnsrn/ollama-php/zipball/32a926e3fa14869ceb2018c0360e9a3fcfd4d526",
+                "reference": "32a926e3fa14869ceb2018c0360e9a3fcfd4d526",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             },
             "require-dev": {
                 "laravel/pint": "^1.0",
-                "pestphp/pest": "^2.20",
+                "pestphp/pest": "^3.0",
                 "spatie/ray": "^1.28"
             },
             "type": "library",
@@ -46,17 +46,24 @@
                     "role": "Developer"
                 }
             ],
-            "description": "This is my package ollama-php",
+            "description": "This is a PHP library for Ollama. Ollama is an open-source project that serves as a powerful and user-friendly platform for running LLMs on your local machine. It acts as a bridge between the complexities of LLM technology and the desire for an accessible and customizable AI experience.",
             "homepage": "https://github.com/ardagnsrn/ollama-php",
             "keywords": [
                 "ArdaGnsrn",
+                "ai",
+                "gemma2",
+                "llama",
+                "llama3.1",
+                "llm",
+                "mistral",
+                "ollama",
                 "ollama-php"
             ],
             "support": {
                 "issues": "https://github.com/ArdaGnsrn/ollama-php/issues",
-                "source": "https://github.com/ArdaGnsrn/ollama-php/tree/1.0.0"
+                "source": "https://github.com/ArdaGnsrn/ollama-php/tree/1.0.2"
             },
-            "time": "2024-08-14T14:29:15+00:00"
+            "time": "2024-12-23T09:15:54+00:00"
         },
         {
             "name": "brick/math",
@@ -514,16 +521,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.8.2",
+            "version": "3.8.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947"
+                "url": "https://github.com/CarbonPHP/carbon.git",
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
-                "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
                 "shasum": ""
             },
             "require": {
@@ -555,10 +562,6 @@
             ],
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev",
-                    "dev-2.x": "2.x-dev"
-                },
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
@@ -568,6 +571,10 @@
                     "includes": [
                         "extension.neon"
                     ]
+                },
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev",
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
@@ -616,7 +623,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-07T17:46:48+00:00"
+            "time": "2024-12-27T09:25:35+00:00"
         },
         {
             "name": "psr/clock",
@@ -1107,20 +1114,20 @@
         },
         {
             "name": "respect/validation",
-            "version": "2.3.10",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "39d604c96b91e26f696d0afa8ab55235a6f28600"
+                "reference": "48b38bd91e0badbc2c4381dce726b09fd68850d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/39d604c96b91e26f696d0afa8ab55235a6f28600",
-                "reference": "39d604c96b91e26f696d0afa8ab55235a6f28600",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/48b38bd91e0badbc2c4381dce726b09fd68850d9",
+                "reference": "48b38bd91e0badbc2c4381dce726b09fd68850d9",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1 || ^8.2",
+                "php": ">=8.1",
                 "respect/stringifier": "^0.2.0",
                 "symfony/polyfill-mbstring": "^1.2"
             },
@@ -1169,9 +1176,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Respect/Validation/issues",
-                "source": "https://github.com/Respect/Validation/tree/2.3.10"
+                "source": "https://github.com/Respect/Validation/tree/2.4.0"
             },
-            "time": "2024-12-05T18:50:44+00:00"
+            "time": "2025-01-07T00:34:58+00:00"
         },
         {
             "name": "symfony/clock",
@@ -1266,12 +1273,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -1472,16 +1479,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v7.2.0",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "dc89e16b44048ceecc879054e5b7f38326ab6cc5"
+                "reference": "e2674a30132b7cc4d74540d6c2573aa363f05923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/dc89e16b44048ceecc879054e5b7f38326ab6cc5",
-                "reference": "dc89e16b44048ceecc879054e5b7f38326ab6cc5",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/e2674a30132b7cc4d74540d6c2573aa363f05923",
+                "reference": "e2674a30132b7cc4d74540d6c2573aa363f05923",
                 "shasum": ""
             },
             "require": {
@@ -1547,7 +1554,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v7.2.0"
+                "source": "https://github.com/symfony/translation/tree/v7.2.2"
             },
             "funding": [
                 {
@@ -1563,7 +1570,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-12T20:47:56+00:00"
+            "time": "2024-12-07T08:18:10+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -1584,12 +1591,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
