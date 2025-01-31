@@ -54,16 +54,10 @@ class Expediente {
     }
 
 
-
-
     public function load($id){
         $expediente = ExpedienteModelo::consultarExpediente($id);
-
         return $expediente;
     }
-
-
-
 
     public function delete($id){
         ExpedienteModelo::deleteExpediente($id);

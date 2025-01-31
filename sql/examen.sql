@@ -12,7 +12,6 @@ create table estudiante(
 //
 create table expediente(
     referencia varchar(10),
-    nia_estudiante integer,
     contenido varchar(1000),
     fecha_modificacion date
 );
